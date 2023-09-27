@@ -25,6 +25,12 @@
     <!-- The hidden file `input` for opening the native camera -->
     <input id="cameraFileInput" type="file" accept="image/*" capture="environment" />
   </label>
+  <div class="container">
+    <button id="cameraButton">📷 開啟相機</button>
+    <img id="previewImage" alt="蔬果預覽">
+    <div id="result">結果: 等待辨識...</div>
+    <button id="retryButton">重新拍照</button>
+  </div>
 
   <!-- displays the picture uploaded from the native camera -->
   <img id="pictureFromCamera" />

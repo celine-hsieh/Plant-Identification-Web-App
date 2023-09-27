@@ -21,3 +21,50 @@
 .btn:hover {
   filter: brightness(0.9);
 }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #4CAF50;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#previewImage {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+  display: none;
+}
+
+#result {
+  margin: 10px 0;
+  font-weight: bold;
+}
