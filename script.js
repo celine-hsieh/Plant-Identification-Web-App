@@ -34,6 +34,11 @@ function handlePhotoSelection(file) {
     resultDiv.style.display = 'block'; // Display the result div
     cameraButton.textContent = '📷 Retake Photo'; // Update button text
 
+    // Save the image to localStorage
+    let photos = JSON.parse(localStorage.getItem("photos")) || [];
+    photos.push(objectURL);
+    localStorage.setItem("photos", JSON.stringify(photos));
+
     // TODO: Send the photo to the backend for recognition
     sendImageToServer(file);
   }
