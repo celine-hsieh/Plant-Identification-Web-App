@@ -47,3 +47,31 @@ function handlePhoto(dataURL) {
     savePhotoToDB(dataURL);
     // ... other code to handle the photo ...
 }
+
+// Menu toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector('.menu-container');
+    const menuContent = document.querySelector('.menu-dropdown');
+
+    menuButton.addEventListener('click', function () {
+        menuContent.classList.toggle('show');
+    });
+
+    // Hide the menu when clicking outside of it
+    document.addEventListener('click', function (event) {
+        if (!menuButton.contains(event.target) && !menuContent.contains(event.target)) {
+            menuContent.classList.remove('show');
+        }
+    });
+
+    // Fetch and display photos if on photos_browse.html
+    if (document.location.pathname.endsWith('photos_browse.html')) {
+        fetchPhotosAndDisplay();
+    }
+});
+
+function fetchPhotosAndDisplay() {
+    // Fetch photos from the server or database and display them
+    // This is a placeholder function and should be implemented based on your backend setup
+    // For now, I'll just add a comment here.
+}

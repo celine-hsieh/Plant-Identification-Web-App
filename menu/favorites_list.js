@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Fetch and display photos if on photos_browse.html
-    if (document.location.pathname.endsWith('recipe_browse.html')) {
+    if (document.location.pathname.endsWith('recipe_favorites.html')) {
         fetchPhotosAndDisplay();
     }
 });

@@ -13,13 +13,13 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #555;
     color: #fff;
     text-align: center;
     padding: 10px 0;
 }
 
-.recipe {
+.favorite-recipe {
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -27,25 +27,27 @@ header {
     overflow: hidden;
 }
 
-.recipe img {
+.favorite-recipe img {
     width: 100%;
     height: auto;
 }
 
-.recipe-content {
+.favorite-content {
     padding: 15px;
 }
 
-.recipe-title {
+.favorite-title {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #ff4500;
+    /* Highlight favorite recipes with a different color */
 }
 
-.recipe-description {
+.favorite-description {
     color: #666;
 }
 
-/* Add any additional styles specific to the recipe browsing page here */
+/* Add any additional styles specific to the favorites page here */
 .menu-container {
     position: absolute;
     top: 20px;
