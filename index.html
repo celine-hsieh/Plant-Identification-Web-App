@@ -1,39 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Camera in browsers test</title>
-
-  <!-- imports the webpage's stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- imports the webpage's javascript file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit & Vegetable Identification</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <h1>Demo - camera in browsers</h1>
-
-  <!-- The `label` is attached to the hidden file input -->
-  <label for="cameraFileInput">
-    <span class="btn">Open camera</span>
-
-    <!-- The hidden file `input` for opening the native camera -->
-    <input id="cameraFileInput" type="file" accept="image/*" capture="environment" />
-  </label>
   <div class="container">
-    <button id="cameraButton">📷 開啟相機</button>
-    <img id="previewImage" alt="蔬果預覽">
-    <div id="result">結果: 等待辨識...</div>
-    <button id="retryButton">重新拍照</button>
+    <h1>Fruit & Vegetable Identification</h1>
+    <div class="button-container">
+      <button id="cameraButton">📷 Open Camera</button>
+      <button id="browseButton">📂 Browse Photos</button>
+    </div>
+    <div class="preview-container">
+      <div id="previewText" style="display: none;">Preview of fruit or vegetable</div>
+      <img id="previewImage" alt="" style="display: none;">
+    </div>
+    <div id="result" style="display: none;">Result: Awaiting recognition...</div>
   </div>
-
-  <!-- displays the picture uploaded from the native camera -->
-  <img id="pictureFromCamera" />
 </body>
 
 </html>

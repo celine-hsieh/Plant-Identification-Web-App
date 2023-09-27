@@ -1,51 +1,55 @@
-document
-  .getElementById("cameraFileInput")
-  .addEventListener("change", function () {
-    document
-      .getElementById("pictureFromCamera")
-      .setAttribute("src", window.URL.createObjectURL(this.files[0]));
-  });
-
-
-// 獲取元素
+// Get elements
 const cameraButton = document.getElementById('cameraButton');
+const browseButton = document.getElementById('browseButton');
 const previewImage = document.getElementById('previewImage');
 const resultDiv = document.getElementById('result');
-const retryButton = document.getElementById('retryButton');
 
-// 創建一個隱藏的文件輸入元素來觸發相機
-const fileInput = document.createElement('input');
-fileInput.type = 'file';
-fileInput.accept = 'image/*';
-fileInput.capture = 'environment'; // 優先使用後置相機
+// Create hidden file input elements to trigger the camera and photo browser
+const cameraInput = document.createElement('input');
+cameraInput.type = 'file';
+cameraInput.accept = 'image/*';
+cameraInput.capture = 'environment'; // Prefer the rear camera
 
-// 監聽相機按鈕點擊事件
+const browseInput = document.createElement('input');
+browseInput.type = 'file';
+browseInput.accept = 'image/*';
+
+// Listen for camera button click event
 cameraButton.addEventListener('click', function () {
-  fileInput.click();
+  cameraInput.click();
 });
 
-// 監聽文件輸入元素的變化事件
-fileInput.addEventListener('change', function () {
-  const file = fileInput.files[0];
+// Listen for browse button click event
+browseButton.addEventListener('click', function () {
+  browseInput.click();
+});
+
+// Common function to handle photo selection
+function handlePhotoSelection(file) {
   if (file) {
     const objectURL = URL.createObjectURL(file);
     previewImage.src = objectURL;
+    document.getElementById('previewText').style.display = 'block';
     previewImage.style.display = 'block';
+    resultDiv.style.display = 'block'; // Display the result div
+    cameraButton.textContent = 'Retake Photo'; // Update button text
 
-    // TODO: 將照片發送到後端進行辨識
+    // TODO: Send the photo to the backend for recognition
     sendImageToServer(file);
   }
+}
+
+// Listen for changes in the camera input element
+cameraInput.addEventListener('change', function () {
+  handlePhotoSelection(cameraInput.files[0]);
 });
 
-// 重新拍照功能
-retryButton.addEventListener('click', function () {
-  fileInput.value = ''; // 清空文件輸入元素
-  previewImage.style.display = 'none';
-  resultDiv.textContent = '結果: 等待辨識...';
-  cameraButton.click(); // 重新觸發相機
+// Listen for changes in the browse input element
+browseInput.addEventListener('change', function () {
+  handlePhotoSelection(browseInput.files[0]);
 });
 
-// 將照片發送到後端進行辨識的函數
+// Function to send the photo to the backend for recognition
 function sendImageToServer(file) {
   const formData = new FormData();
   formData.append('photo', file);
@@ -57,13 +61,13 @@ function sendImageToServer(file) {
     .then(response => response.json())
     .then(data => {
       if (data && data.result) {
-        resultDiv.textContent = '結果: ' + data.result;
+        resultDiv.textContent = 'Result: ' + data.result;
       } else {
-        resultDiv.textContent = '辨識失敗，請重試。';
+        resultDiv.textContent = 'Recognition failed, please try again.';
       }
     })
     .catch(error => {
       console.error('Error:', error);
-      resultDiv.textContent = '發生錯誤，請重試。';
+      resultDiv.textContent = 'An error occurred, please try again.';
     });
 }
