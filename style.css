@@ -5,11 +5,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
+  /* Increased padding */
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -19,26 +21,33 @@ body {
 
 h1 {
   color: #4CAF50;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  /* Doubled font size */
+  margin-bottom: 40px;
+  /* Doubled margin */
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  /* Doubled margin */
 }
 
 button {
   background-color: #4CAF50;
   color: #fff;
-  padding: 10px 20px;
+  padding: 20px 40px;
+  /* Doubled padding */
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
+  /* Doubled border radius */
   cursor: pointer;
-  font-size: 16px;
+  font-size: 32px;
+  /* Doubled font size */
   flex: 1;
-  margin: 0 10px;
+  margin: 0 20px;
+  /* Doubled margin */
 }
 
 button:hover {
@@ -47,56 +56,47 @@ button:hover {
 
 .preview-container {
   position: relative;
-  margin: 20px 0;
+  margin: 40px 0;
+  /* Doubled margin */
   max-width: 60%;
-  /* Limit the photo size */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ... 其他CSS代碼 ... */
-
-.preview-container {
-  position: relative;
-  margin: 20px 0;
-  max-width: 60%;
-  /* Limit the photo width */
   margin-left: auto;
   margin-right: auto;
 }
 
 #previewText {
   position: absolute;
-  top: 10px;
+  top: 20px;
+  /* Doubled top position */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 10px 20px;
+  /* Doubled padding */
+  border-radius: 16px;
+  /* Doubled border radius */
+  font-size: 28px;
+  /* Doubled font size */
 }
 
 #previewImage {
   max-width: 100%;
-  /* Ensure the photo doesn't exceed the container width */
   max-height: 300px;
-  /* Limit the photo height */
   display: block;
   margin: 0 auto;
-  /* Center the image */
   border-radius: 8px;
   object-fit: contain;
-  /* Ensure the photo doesn't get distorted */
 }
 
-/* ... 其他CSS代碼 ... */
-
-
 #result {
-  margin: 10px 0;
+  margin: 20px 0;
+  /* Doubled margin */
   font-weight: bold;
   background-color: #e0e0e0;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 20px;
+  /* Doubled padding */
+  border-radius: 16px;
+  /* Doubled border radius */
+  font-size: 24px;
+  /* Doubled font size */
 }
