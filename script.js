@@ -32,7 +32,7 @@ function handlePhotoSelection(file) {
     document.getElementById('previewText').style.display = 'block';
     previewImage.style.display = 'block';
     resultDiv.style.display = 'block'; // Display the result div
-    cameraButton.textContent = 'Retake Photo'; // Update button text
+    cameraButton.textContent = '📷 Retake Photo'; // Update button text
 
     // TODO: Send the photo to the backend for recognition
     sendImageToServer(file);

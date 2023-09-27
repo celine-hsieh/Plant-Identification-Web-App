@@ -54,6 +54,17 @@ button:hover {
   margin-right: auto;
 }
 
+/* ... 其他CSS代碼 ... */
+
+.preview-container {
+  position: relative;
+  margin: 20px 0;
+  max-width: 60%;
+  /* Limit the photo width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #previewText {
   position: absolute;
   top: 10px;
@@ -67,12 +78,20 @@ button:hover {
 }
 
 #previewImage {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  /* Ensure the photo doesn't exceed the container width */
+  max-height: 300px;
+  /* Limit the photo height */
+  display: block;
+  margin: 0 auto;
+  /* Center the image */
   border-radius: 8px;
   object-fit: contain;
   /* Ensure the photo doesn't get distorted */
 }
+
+/* ... 其他CSS代碼 ... */
+
 
 #result {
   margin: 10px 0;
