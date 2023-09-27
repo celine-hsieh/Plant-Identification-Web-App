@@ -1,25 +1,25 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f9f6f2;
+  /* Light beige background for a food-themed design */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  /* Prevent scrolling */
 }
 
 .container {
-  background-color: #fff;
-  padding: 2%;
-  /* Use percentage for padding */
+  background-color: #fff5e1;
+  /* Cream color for the container */
+  padding: 40px;
+  /* Equal padding on all sides */
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 80%;
   max-width: 800px;
-  /* Set a maximum width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,37 +27,38 @@ body {
 }
 
 h1 {
-  color: #4CAF50;
-  font-size: calc(1.5em + 1vw);
-  /* Adjust font size based on viewport width */
-  margin-bottom: calc(1em + 1vw);
-  /* Adjust margin based on viewport width */
+  color: #d1986a;
+  font-size: calc(1.2em + 0.8vw);
+  /* Adjusted font size */
+  margin-bottom: calc(0.8em + 0.8vw);
+  /* Adjusted margin */
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: calc(1em + 1vw);
-  /* Adjust margin based on viewport width */
+  flex-wrap: nowrap;
 }
 
 button {
-  background-color: #4CAF50;
+  white-space: nowrap;
+  background-color: #e8a978;
   color: #fff;
   padding: calc(0.5em + 0.5vw) calc(1em + 1vw);
   /* Adjust padding based on viewport width */
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  font-size: calc(1em + 1vw);
-  /* Adjust font size based on viewport width */
+  font-size: calc(0.6em + 0.6vw);
+  /* Adjusted font size */
   flex: 1;
   margin: 0 calc(0.5em + 0.5vw);
   /* Adjust margin based on viewport width */
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #d1986a;
 }
 
 .preview-container {
@@ -76,8 +77,8 @@ button:hover {
   color: #fff;
   padding: 5px 10px;
   border-radius: 16px;
-  font-size: calc(0.8em + 0.5vw);
-  /* Adjust font size based on viewport width */
+  font-size: calc(0.6em + 0.4vw);
+  /* Adjusted font size */
 }
 
 #previewImage {
@@ -98,6 +99,6 @@ button:hover {
   padding: calc(0.5em + 0.5vw);
   /* Adjust padding based on viewport width */
   border-radius: 16px;
-  font-size: calc(1em + 0.5vw);
-  /* Adjust font size based on viewport width */
+  font-size: calc(0.8em + 0.4vw);
+  /* Adjusted font size */
 }
