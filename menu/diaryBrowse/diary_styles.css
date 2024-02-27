@@ -1,0 +1,627 @@
+/* Reset some default styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+/* Select 下拉选择框的样式 */
+#sortSelector {
+    -webkit-appearance: none;
+    /* 移除 Chrome、Safari 等的默认下拉样式 */
+    -moz-appearance: none;
+    /* 移除 Firefox 的默认下拉样式 */
+    appearance: none;
+    /* 标准语法 */
+    background-color: #f7e8c3;
+    /* 设置背景色 */
+    border: 1px solid #d1986a;
+    /* 设置边框 */
+    border-radius: 4px;
+    /* 边框圆角 */
+    padding: 5px 10px;
+    /* 内边距 */
+    font-size: 14px;
+    /* 字体大小 */
+    color: #743002;
+    /* 字体颜色 */
+    margin: 0 0 10px 0;
+    /* 外边距 */
+    cursor: pointer;
+    /* 鼠标样式 */
+}
+
+/* 当下拉选择框获得焦点时的样式 */
+#sortSelector:focus {
+    outline: none;
+    /* 去除焦点轮廓 */
+    border-color: #e8a978;
+    /* 焦点时边框颜色 */
+}
+
+/* 下拉选择框的选项样式 */
+#sortSelector option {
+    padding: 5px;
+    /* 选项内边距 */
+    background-color: #f7e8c3;
+    /* 选项背景色 */
+    color: #743002;
+    /* 选项字体颜色 */
+}
+
+/* 设置下拉箭头样式（可选） */
+#sortSelector::-ms-expand {
+    display: none;
+    /* 在某些浏览器中隐藏默认下拉箭头 */
+}
+
+.container {
+    background-color: #fff5e1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 20px 20px;
+}
+
+.menu-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-button {
+    background-color: #e8a978;
+    /* Warm orange color for the menu button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding to make it rectangular */
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-button:hover {
+    background-color: #d1986a;
+    /* Darken the button color on hover */
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff5e1;
+    /* Cream color for the dropdown */
+    border: 1px solid #d1986a;
+    /* Warm brown border */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #d1986a;
+    /* Warm brown color for the text */
+    text-decoration: none;
+    border-bottom: 1px solid #d1986a;
+    white-space: nowrap;
+}
+
+.menu-dropdown a:last-child {
+    border-bottom: none;
+    /* Remove border for the last item */
+}
+
+#home:hover {
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 7.5px;
+}
+
+#user:hover {
+    border-bottom-right-radius: 7.5px;
+    border-bottom-left-radius: 7.5px;
+}
+
+.menu-dropdown a:hover {
+    background-color: #e8a978;
+    /* Warm orange color for hover */
+    color: #fff;
+}
+
+.menu-button:hover+.menu-dropdown {
+    display: block;
+}
+
+.menu-container:hover .menu-dropdown {
+    display: block;
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.slide-out-left {
+    animation-name: slideOutLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+#backButton {
+    position: absolute;
+    bottom: 15px;
+    /* Move the button to the bottom */
+    left: 20px;
+    background-color: #e8a978;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: calc(0.6em + 0.6vw);
+    z-index: 10;
+    /* Ensure the button is above other elements*/
+}
+
+#backButton:hover {
+    background-color: #d1986a;
+}
+
+#home {
+    display: block;
+    text-align: center;
+}
+
+#home img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 日志条目的样式 */
+.diary-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1986a;
+    padding: 10px 0;
+    background-color: #fffcf6;
+    position: relative;
+    overflow: hidden;
+    /* 防止内容溢出 */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+.diary-entry:last-child {
+    border-bottom: none;
+}
+
+.diary-entry h3,
+.diary-entry p {
+    flex-grow: 1;
+    font-size: 1.2em;
+    margin: 0;
+    color: #743002;
+    word-break: break-word;
+    /* 防止文本溢出 */
+    transition: transform 0.3s ease;
+    /* 添加平滑过渡效果 */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    left: -50px;
+    /* 初始隐藏在左侧 */
+    top: 10px;
+    transition: left 0.3s ease;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+/* 日志条目长按时的样式 */
+.diary-entry.shifted .delete-btn {
+    left: 10px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+.diary-entry.shifted h3 {
+    transform: translateX(50px);
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+    -webkit-user-select: none;
+    /* Safari */
+}
+
+/* 当日志条目被长按时 */
+.diary-entry.shifted .read-more-btn {
+    transform: translateX(60px) translateY(-50%);
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+    -webkit-user-select: none;
+    /* Safari */
+}
+
+/* “阅读更多”按钮的样式 */
+.read-more-btn {
+    background-color: #e8a978;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    position: absolute;
+    /* 绝对定位 */
+    right: 10px;
+    /* 位置固定在右侧 */
+    top: 50%;
+    /* 垂直居中 */
+    transform: translateY(-50%);
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+    -webkit-user-select: none;
+    /* Safari */
+}
+
+.read-more-btn:hover {
+    background-color: #d1986a;
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* 标准语法 */
+}
+
+/* 容器样式，以便日志可滚动 */
+.diaries-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fffcf6;
+    padding: 0px 0 10px 10px;
+    overflow-y: auto;
+    /* 当内容超出容器高度时显示垂直滚动条 */
+    max-height: 427px;
+    height: 70%;
+}
+
+.diary-detail-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fffcf6;
+    /* Adjust the background color if needed */
+    padding: 15px;
+    overflow: auto;
+    height: 73%;
+    margin: 25px auto;
+    max-width: 850px;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    display: none;
+    /* Initially hidden */
+}
+
+.diary-detail-container h1 {
+    font-size: 1.5em;
+    color: #5a2d0c;
+    /* Adjust the color if needed */
+    margin-bottom: 10px;
+}
+
+.diary-detail-container h2 {
+    font-size: 1em;
+    color: #743002;
+    /* Adjust the color if needed */
+    margin-top: 10px;
+}
+
+.diary-detail-container p {
+    margin-left: 10px;
+    color: #743002;
+    /* Adjust the color if needed */
+}
+
+.diary-detail-container img {
+    max-width: 100%;
+    /* Ensure images are responsive */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* .outer-container {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: left 0.5s ease-in-out;
+    z-index: 10;
+} */
+
+/* .outer-container.active {
+    left: 0;
+} */
+
+.new-diary {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: fixed;
+    top: 15px;
+    left: 100%;
+    /* 起始时在屏幕外 */
+    overflow: auto;
+    height: 89%;
+    margin: 0 auto;
+    width: 91%;
+    background-color: #fff5e1;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    /* 使用 flex 布局 */
+    flex-direction: column;
+    /* 垂直方向排列 */
+    align-items: center;
+    z-index: 1001;
+}
+
+.new-diary input[type="date"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    color: #743002;
+}
+
+.new-diary.active {
+    transform: translateX(-105%);
+    /* 滑入屏幕 */
+}
+
+.new-diary select {
+    width: 30%;
+    left: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    /* 和 textarea 之间的间距 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    color: #743002;
+}
+
+/* 适应新日志容器的文本区域样式 */
+.new-diary textarea {
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    /* 上下保持原样，左右自动（居中） */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    color: #743002;
+    overflow: auto;
+    font-size: 16px;
+    /* 设置一个足够大的字体大小 */
+}
+
+.selectors {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    width: 75%;
+    /* 调整为父容器宽度的80% */
+    margin-left: auto;
+    /* 水平居中 */
+    margin-right: auto;
+    /* 水平居中 */
+}
+
+.selectors>* {
+    flex: 1.2;
+    margin: 0 5px;
+    /* 添加间隔 */
+}
+
+/* 复制 sortSelector 的样式并应用到所有 select 和 input[type="date"] */
+#diaryDate {
+    flex: 1.5;
+    /* 日期选择器占据更多空间 */
+    background-color: #f7e8c3;
+    border: 1px solid #d1986a;
+    border-radius: 4px;
+    padding: 5px 5px;
+    font-size: 14px;
+    color: #743002;
+    cursor: pointer;
+}
+
+
+#weatherSelector {
+    flex: 1;
+    /* 天气选择器占据较少空间 */
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    /* appearance: none; */
+    background-color: #f7e8c3;
+    border: 1px solid #d1986a;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #743002;
+    cursor: pointer;
+}
+
+#weatherSelector:focus,
+#diaryDate:focus {
+    outline: none;
+    border-color: #e8a978;
+}
+
+#weatherSelector option {
+    padding: 5px;
+    background-color: #f7e8c3;
+    color: #743002;
+}
+
+#weatherSelector::-ms-expand,
+#diaryDate::-ms-expand {
+    display: none;
+}
+
+/* 图片预览样式 */
+.new-diary img {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+/* 按钮样式 */
+.new-diary button {
+    background-color: #e8a978;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+}
+
+.new-diary button:hover {
+    background-color: #d1986a;
+}
+
+#newDiary {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    background-color: #e8a978;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    transform: translateX(-50%);
+}
+
+#newDiary:hover {
+    background-color: #d1986a;
+    /* 鼠标悬浮时的背景颜色 */
+}
+
+#redirectToLogin {
+    background-color: #e8a978;
+    /* 按钮颜色调整 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#redirectToLogin:hover {
+    background-color: #d1986a;
+    /* 按钮悬浮颜色调整 */
+}
+
+#passwordError {
+    display: none;
+    /* 默认隐藏 */
+    color: red;
+    margin-top: 10px;
+}

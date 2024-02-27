@@ -1,56 +1,141 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f9f6f2;
-  /* Light beige background for a food-themed design */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #fff5e1;
   margin: 0;
+  padding: 0;
   overflow: hidden;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* 标准语法 */
 }
 
 .container {
   background-color: #fff5e1;
-  /* Cream color for the container */
-  padding: 40px;
-  /* Equal padding on all sides */
+  padding: 20px 10px;
+  margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 80%;
+  position: relative;
   max-width: 800px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+}
+
+#main {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fffcf6;
+  overflow: hidden;
+  bottom: 20px;
+  padding: 50px 0;
+  height: 58%;
+  position: absolute;
+  top: 12%;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.school-logo {
+  position: absolute;
+  top: 20px;
+  /* Adjust this value to position it vertically */
+  left: 20px;
+  /* Adjust this value to position it horizontally */
+  width: 240px;
+  /* Adjust width if needed */
+  height: auto;
+  /* This will maintain the aspect ratio of the logo */
+  z-index: 1000;
+  /* Ensure it's on top of other elements */
 }
 
 h1 {
-  color: #d1986a;
-  font-size: calc(1.2em + 0.8vw);
-  /* Adjusted font size */
-  margin-bottom: calc(0.8em + 0.8vw);
-  /* Adjusted margin */
+  color: #924403;
+  font-size: calc(2.7vh + 1vw);
+  line-height: 1.5;
+  margin: 0;
+  position: absolute;
+  /* top: 10vh; */
+  top: 20px;
+  width: 90%;
+  padding-left: 20px;
+  /* Add padding to the left side */
 }
+
+
+#languageSwitcher {
+  /* z-index: 9999; */
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  top: 14%;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  padding: 5px 10px;
+  border: 1px solid #d1986a;
+  background-color: #f7e8c3;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+  margin-left: 20px;
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
+  transition: background-color 0.3s ease;
+  color: #743002;
+}
+
+#languageSwitcher:hover {
+  background-color: #f7e8c3;
+}
+
+#languageSwitcher:after {
+  z-index: 10000;
+  content: '▼';
+  position: absolute;
+  /* top: 50%; */
+  right: 10px;
+  /* transform: translateY(-50%); */
+  pointer-events: none;
+}
+
 
 .button-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: calc(1em + 1vw);
   flex-wrap: nowrap;
+  position: absolute;
+  overflow: auto;
+  top: 22%;
+  padding: 0px 15px;
+  /* Adjust this value to move the h1 up or down */
+  /*left: 50%;*/
+  width: 85%;
+  max-width: 900px;
 }
 
 button {
   white-space: nowrap;
   background-color: #e8a978;
   color: #fff;
-  padding: calc(0.5em + 0.5vw) calc(1em + 1vw);
-  /* Adjust padding based on viewport width */
+  padding: calc(0.5em + 0.3vw);
+  padding-left: calc(1em + 0.5vw);
+  padding-right: calc(1em + 0.5vw);
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  font-size: calc(0.6em + 0.6vw);
+  font-size: calc(0.65em + 0.65vw);
   /* Adjusted font size */
   flex: 1;
   margin: 0 calc(0.5em + 0.5vw);
@@ -61,34 +146,48 @@ button:hover {
   background-color: #d1986a;
 }
 
-.preview-container {
-  position: relative;
-  margin: calc(1em + 1vw) 0;
-  /* Adjust margin based on viewport width */
+#preview-container {
+  position: absolute;
+  top: 28%;
+  /* margin-left: calc(1em + 1vw) 20px; */
+  margin-left: 20px;
+  /* Top and bottom margin is calc(1em + 1vw), left and right margin is 20px */
   width: 100%;
+  max-width: calc(100% - 40px);
+  /* margin-top: 20px; */
+}
+
+
+#previewImage {
+  position: relative;
+  /* Set to relative */
+  max-width: 100%;
+  max-height: calc(38vh - 8vw);
+  display: block;
+  /* margin-left: 20px; */
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 #previewText {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: 40px;
+  /* left: 60vw; */
+  /* transform: translateX(-50%); */
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 5px 10px;
   border-radius: 16px;
   font-size: calc(0.6em + 0.4vw);
-  /* Adjusted font size */
-}
-
-#previewImage {
-  max-width: 100%;
-  max-height: calc(30vh);
-  /* Adjust height based on viewport height */
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  object-fit: contain;
+  z-index: 1;
+  max-width: 150px;
+  /* 使用max-width設置最大寬度 */
+  white-space: nowrap;
+  /* 防止文本折行 */
+  overflow: hidden;
+  /* 隱藏溢出的文本 */
+  text-overflow: ellipsis;
+  /* 使用省略號表示溢出的文本 */
 }
 
 #result {
@@ -96,17 +195,53 @@ button:hover {
   /* Adjust margin based on viewport width */
   font-weight: bold;
   background-color: #e0e0e0;
-  padding: calc(0.5em + 0.5vw);
-  /* Adjust padding based on viewport width */
+  padding: calc(0.6em + 0.2vw);
   border-radius: 16px;
-  font-size: calc(0.8em + 0.4vw);
+  font-size: calc(0.8em + 0.2vw);
+  position: absolute;
+  top: calc(55% + 11vh - 2vw);
+  margin-left: 20px;
   /* Adjusted font size */
+}
+
+.generate-container {
+  display: flex;
+  /* align-items: center; */
+  max-width: 800px;
+  margin-bottom: calc(1em + 1vw);
+  flex-wrap: nowrap;
+  position: absolute;
+  /* Use absolute positioning */
+  top: calc(70% + 6em + 10px);
+  /* Adjust this value to move the h1 up or down */
+  /*left: 50%;*/
+  width: 20%;
+}
+
+#generateRecipe {
+  z-index: 10;
+  /* 初始值 */
+  white-space: nowrap;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: calc(0.6em + 0.6vw);
+  /* Adjusted font size */
+  flex: 1;
+  /* Adjust margin based on viewport width */
+  margin-left: 20px;
+}
+
+#generateRecipe:hover {
+  background-color: #d1986a;
 }
 
 .menu-container {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 6px;
   z-index: 1000;
 }
 
@@ -116,13 +251,16 @@ button:hover {
   color: #fff;
   border: none;
   border-radius: 8px;
-  /* Rounded corners */
   padding: 10px 20px;
-  /* Padding to make it rectangular */
   cursor: pointer;
   font-size: 24px;
   transition: background-color 0.3s;
-  /* Smooth transition for hover effect */
+  width: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .menu-button:hover {
@@ -134,7 +272,7 @@ button:hover {
   display: none;
   position: absolute;
   top: 50px;
-  right: 0;
+  right: 14px;
   background-color: #fff5e1;
   /* Cream color for the dropdown */
   border: 1px solid #d1986a;
@@ -150,13 +288,34 @@ button:hover {
   /* Warm brown color for the text */
   text-decoration: none;
   border-bottom: 1px solid #d1986a;
-  /* Warm brown border */
+  white-space: nowrap;
 }
 
 .menu-dropdown a:last-child {
   border-bottom: none;
   /* Remove border for the last item */
 }
+
+#recipe:hover {
+  border-top-right-radius: 7.5px;
+  border-top-left-radius: 7.5px;
+}
+
+#user:hover {
+  border-bottom-right-radius: 7.5px;
+  border-bottom-left-radius: 7.5px;
+}
+
+#recipe:hover {
+  border-top-right-radius: 7.5px;
+  border-top-left-radius: 7.5px;
+}
+
+#gallery:hover {
+  border-bottom-right-radius: 7.5px;
+  border-bottom-left-radius: 7.5px;
+}
+
 
 .menu-dropdown a:hover {
   background-color: #e8a978;
@@ -170,4 +329,201 @@ button:hover {
 
 .menu-container:hover .menu-dropdown {
   display: block;
+}
+
+/* Animation for sliding out the container to the left */
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Class to apply the slide out animation */
+.slide-out-left {
+  animation-name: slideOutLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+#recipeContainer {
+  /* width: 80%; */
+  height: 60%;
+  position: absolute;
+  top: 12%;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(0.8em + 0.8vw);
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #d1986a;
+  border-radius: 8px;
+  background-color: #fff5e1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#recipeContainer ul {
+  list-style-type: disc;
+  /* Use disc bullets for the list */
+  padding-left: 20px;
+  /* Add some padding to the left of the list */
+}
+
+#recipeContainer li {
+  margin-bottom: 10px;
+  /* Add some margin to the bottom of each list item */
+  line-height: 1.5;
+  /* Increase line height for readability */
+}
+
+.recipe-container {
+  display: flex;
+  /* margin-bottom: calc(1em + 1vw); */
+  bottom: 20px;
+  flex-wrap: nowrap;
+  position: absolute;
+  /* Use absolute positioning */
+  /* top: calc(80% + 6em + 10px); */
+  /* right: 100%; */
+  /* bottom: 10px; */
+  align-items: left;
+  /* padding: 10px 0 0 0; */
+  /* width: 4%; */
+}
+
+/* #next-container {
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
+  flex-wrap: nowrap;
+  position: absolute;
+} */
+
+#saveRecipe {
+  z-index: 15;
+  /* 初始值 */
+  white-space: nowrap;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: calc(0.6em + 0.6vw);
+  /* align-items: center; */
+  flex: 1;
+  padding: 10px 20px;
+  margin-left: 30px;
+}
+
+#saveRecipe:hover {
+  background-color: #d1986a;
+}
+
+#generateImage {
+  z-index: 15;
+  /* 初始值 */
+  white-space: nowrap;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: calc(0.6em + 0.6vw);
+  /* align-items: right; */
+  flex: 1;
+  padding: 10px 20px;
+  margin-left: 30px;
+}
+
+#generateImage:hover {
+  background-color: #d1986a;
+}
+
+/* #backButton {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: calc(0.6em + 0.6vw);
+  z-index: 10;
+} */
+
+#backButton {
+  z-index: 15;
+  white-space: nowrap;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: calc(0.6em + 0.6vw);
+  flex: 1;
+  padding: 10px 20px;
+  margin-left: 20px;
+}
+
+#backButton:hover {
+  background-color: #d1986a;
+}
+
+#imageContainer {
+  height: 60%;
+  position: absolute;
+  top: 12%;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(0.8em + 0.8vw);
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #d1986a;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+
+#imageContainer img {
+  max-width: calc(100% - 20px);
+  height: auto;
+  margin-right: 20px;
+  /* border: 1px solid #ddd;
+  border-radius: 4px; */
+  padding: 10px;
+}
+
+#regenerate {
+  position: absolute;
+  bottom: 20px;
+  /* Move the button to the bottom */
+  left: 20px;
+  background-color: #e8a978;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: calc(0.6em + 0.6vw);
+  z-index: 10;
+  /* Ensure the button is above other elements*/
+}
+
+#regenerate:hover {
+  background-color: #d1986a;
 }

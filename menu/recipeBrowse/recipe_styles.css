@@ -1,0 +1,349 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Safari  Firefox  IE/Edge  标准语法  */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    background-color: #fff5e1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 20px 20px;
+}
+
+/* Add any additional styles specific to the recipe browsing page here */
+.menu-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-button {
+    background-color: #e8a978;
+    /* Warm orange color for the menu button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding to make it rectangular */
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-button:hover {
+    background-color: #d1986a;
+    /* Darken the button color on hover */
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff5e1;
+    /* Cream color for the dropdown */
+    border: 1px solid #d1986a;
+    /* Warm brown border */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #d1986a;
+    /* Warm brown color for the text */
+    text-decoration: none;
+    border-bottom: 1px solid #d1986a;
+    white-space: nowrap;
+}
+
+.menu-dropdown a:last-child {
+    border-bottom: none;
+    /* Remove border for the last item */
+}
+
+#home:hover {
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 7.5px;
+}
+
+#user:hover {
+    border-bottom-right-radius: 7.5px;
+    border-bottom-left-radius: 7.5px;
+}
+
+.menu-dropdown a:hover {
+    background-color: #e8a978;
+    /* Warm orange color for hover */
+    color: #fff;
+}
+
+.menu-button:hover+.menu-dropdown {
+    display: block;
+}
+
+.menu-container:hover .menu-dropdown {
+    display: block;
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.slide-out-left {
+    animation-name: slideOutLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+#backButton {
+    position: absolute;
+    bottom: 15px;
+    /* Move the button to the bottom */
+    left: 20px;
+    background-color: #e8a978;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: calc(0.6em + 0.6vw);
+    z-index: 10;
+    /* Ensure the button is above other elements*/
+}
+
+#backButton:hover {
+    background-color: #d1986a;
+}
+
+#recipes-list {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fffcf6;
+    /* padding: 0 0 10px 10px; */
+    overflow: auto;
+    overflow-y: auto;
+    /* 当内容超出容器高度时显示垂直滚动条 */
+    max-height: 64vh;
+    /* height: 60%; */
+    /* padding: 50px 0; */
+    height: 60%;
+    /* position: absolute; */
+    top: 15%;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.recipe-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1986a;
+    padding: 10px 0;
+}
+
+.recipe-item:last-child {
+    border-bottom: none;
+}
+
+.recipe-item h2 {
+    flex-grow: 1;
+    font-size: 1.2em;
+    margin: 0;
+    color: #743002;
+}
+
+.recipe-item button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+/* New Styles for Recipe Details Container */
+.recipe-detail-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff5e1;
+    /* Slightly different background color */
+    padding: 15px;
+    overflow: auto;
+    height: 70%;
+    width: 80%;
+    max-width: 850px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+.recipe-detail-container h1 {
+    font-size: 1.5em;
+    color: #5a2d0c;
+    /* Darker brown for the title */
+    margin-bottom: 10px;
+}
+
+.recipe-detail-container h2 {
+    font-size: 1em;
+    color: #743002;
+    margin-top: 10px;
+}
+
+.recipe-detail-container ul,
+.recipe-detail-container ol {
+    margin-left: 10px;
+    color: #743002;
+}
+
+.recipe-detail-container button {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    display: block;
+}
+
+/* .recipe-detail-container button:hover {
+    background-color: #b87c5a;
+} */
+
+#home {
+    display: block;
+    /* Make sure it's a block-level element */
+    text-align: center;
+    /* Horizontally center the content */
+}
+
+#home img {
+    max-width: 100%;
+    /* Ensure the image doesn't overflow its container */
+    height: auto;
+    /* Maintain the image's aspect ratio */
+}
+
+.viewMore-btn:hover {
+    background-color: #b87c5a;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 0 0 20px;
+}
+
+.viewMore-btn {
+    background-color: #e8a978;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 0 0 20px;
+}
+
+
+.favorite-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b87c5a;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.favorite-btn.not-favorited {
+    color: #b87c5a;
+    /* 空心样式 */
+}
+
+.favorite-btn.favorited {
+    color: #b87c5a;
+    /* 实心样式 */
+}
+
+#search-container {
+    margin: 20px 0;
+    box-sizing: border-box;
+    /* text-align: center; */
+    flex-grow: 1;
+    /* Adjust as needed */
+    /* flex-shrink: 0; */
+    /* Prevents shrinking */
+    /* flex-basis: auto; */
+    /* Default value */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* display: flex; */
+    width: 100%;
+    max-width: 100vw;
+}
+
+#searchInput::placeholder {
+    font-size: 13px;
+    /* Adjust size as needed */
+    color: #888;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 8px 18px;
+    margin-right: 10px;
+    /* max-width: 100vw; */
+    width: calc(100% - 13vh);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e8a978;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #e8a978;
+    /* Darker green */
+}

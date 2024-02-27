@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en"> -->
 
 <head>
   <meta charset="UTF-8">
@@ -12,26 +12,49 @@
 </head>
 
 <body>
+  <img src="logo new.png" alt="光華高中 Logo" class="school-logo">
   <div class="menu-container">
     <button class="menu-button">☰</button>
     <div class="menu-dropdown">
-      <a href=".\menu\recipe_browse.html">Recipe</a>
-      <a href=".\menu\recipe_favorites.html">Favorite</a>
-      <a href=".\menu\photos_browse.html">Gallery</a>
+      <a id="recipe" href="./menu/recipeBrowse/recipe_browse.html">Recipe</a>
+      <a id="favorite" href="./menu/recipeFavorites/recipe_favorites.html">Favorite</a>
+      <a id="diary" href="./menu/diaryBrowse/diary_browse.html">Diary</a>
+      <a id="test"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSd5yOWwnIV5LnHnplNdY916sBVMFxDhbM_ds6TtQojalfSc9w/viewform?usp=sf_link">Test</a>
+      <a id="user">Login</a>
     </div>
   </div>
+
   <div class="container">
-    <h1>Fruit & Vegetable Identification</h1>
-    <div class="button-container">
-      <button id="cameraButton">📷 Open Camera</button>
-      <button id="browseButton">📂 Browse Photos</button>
+    <div id="main" class="main">
+      <select id="languageSwitcher">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
+      <h1 id="title">FruitVeg Culinary Compass</h1>
+      <div class="button-container">
+        <button id="cameraButton">📷 Open Camera</button>
+        <button id="browseButton">📂 Browse Photos</button>
+      </div>
+      <div id="preview-container" class="preview-container">
+        <div id="previewText" style="display: none;">Preview of fruit or vegetable</div>
+        <img id="previewImage" alt="" style="display: none;">
+      </div>
+      <div id="result" style="display: none;">Awaiting recognition...</div>
+      <div class="generate-container">
+        <button id="generateRecipe" style="display: none;">Generate Recipe</button>
+      </div>
     </div>
-    <div class="preview-container">
-      <div id="previewText" style="display: none;">Preview of fruit or vegetable</div>
-      <img id="previewImage" alt="" style="display: none;">
-    </div>
-    <div id="result" style="display: none;">Result: Awaiting recognition...</div>
+    <div id="recipeContainer" class="recipeContainer" style="display: none;"></div>
+    <div id="imageContainer" style="display: none;"></div>
   </div>
+  <div id="recipe-container" class="recipe-container">
+    <button id="backButton" style="display: none;">⬅️ Back</button>
+    <button id="saveRecipe" style="display: none;">Save Recipe</button>
+    <button id="generateImage" style="display: none;">Generate Image</button>
+  </div>
+  <button id="regenerate" style="display: none;">⬅️ Regenerate</button>
+  <script src="script.js"></script>
 </body>
 
 </html>

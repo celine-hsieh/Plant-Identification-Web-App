@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Browse</title>
+    <link rel="stylesheet" href="diary_styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Diary Browse</h1>
+        <select id="sortSelector">
+            <option value="asc">時間 ↓</option>
+            <option value="desc">時間 ↑</option>
+        </select>
+        <div class="diaries-container" id="diaries-container"></div>
+        <div id="diary-detail-container" class="diary-detail-container"></div>
+    </div>
+
+    <div id="newDiaryContainer" class="new-diary">
+        <div class="selectors">
+            <input type="date" id="newDiaryDate" name="diaryDate">
+            <select id="weatherSelector">
+                <option value="">選擇天氣</option>
+                <option value="☀️大晴天">☀️大晴天</option>
+                <option value="🌤️晴天">🌤️晴天</option>
+                <option value="⛅晴時多雲">⛅晴時多雲</option>
+                <option value="☁️陰天">☁️陰天</option>
+                <option value="🌦️晴時多雲偶陣雨">🌦️晴時多雲偶陣雨</option>
+                <option value="🌧️雨天">🌧️雨天</option>
+                <option value="⛈️雷雨">⛈️雷雨</option>
+            </select>
+        </div>
+        <textarea id="newDiaryText"></textarea>
+        <input type="file" id="newDiaryImage" accept="image/*">
+        <img id="imagePreview" src="" alt="Image preview" style="display: none; max-width: 100%; height: auto;" />
+        <button id="addDiaryButton">完成</button>
+    </div>
+
+    <div class="menu-container">
+        <button class="menu-button">☰</button>
+        <div class="menu-dropdown">
+            <a id="home" href="../../index.html">
+                <img src="../../home.png" alt="Home" width="22" height="22">
+            </a>
+            <a id="recipe" href="../recipeBrowse/recipe_browse.html">Recipe</a>
+            <a id="favorite" href="../recipeFavorites/recipe_favorites.html">Favorite</a>
+            <a id="diary" href="diary_browse.html">Diary</a>
+            <a id="test"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSd5yOWwnIV5LnHnplNdY916sBVMFxDhbM_ds6TtQojalfSc9w/viewform?usp=sf_link">Test</a>
+            <a id="user" href="../../index.html">Login</a>
+        </div>
+    </div>
+    <script src="diary_list.js" defer></script>
+    <button id="backButton" style="display: none;">⬅️ Back</button>
+    <button id="newDiary">新增日誌</button>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Browse</title>
+    <link rel="stylesheet" href="recipe_styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Recipe Browse</h1>
+        <!-- Search Bar -->
+        <div id="search-container" class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by recipe name or ingredients...">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <script src="recipe_list.js" defer></script>
+        <div id="recipes-list" class="recipes-list"></div>
+        <div id="recipe-detail-container" class="recipe-detail-container"></div>
+    </div>
+    <div class="menu-container">
+        <button class="menu-button">☰</button>
+        <div class="menu-dropdown">
+            <a id="home" href="../../index.html">
+                <img src="../../home.png" alt="Home" width="22" height="22">
+            </a>
+            <a id="recipe" href="recipe_browse.html">Recipe</a>
+            <a id="favorite" href="../recipeFavorites/recipe_favorites.html">Favorite</a>
+            <a id="diary" href="../diaryBrowse/diary_browse.html">Diary</a>
+            <a id="test"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSd5yOWwnIV5LnHnplNdY916sBVMFxDhbM_ds6TtQojalfSc9w/viewform?usp=sf_link">Test</a>
+            <a id="user" href="../../index.html">Login</a>
+        </div>
+    </div>
+    <button id="backButton" style="display: none;">⬅️ Back</button>
+</body>
+
+</html>
