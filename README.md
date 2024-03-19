@@ -1,7 +1,7 @@
 # Plant-Identification-Web-App
 Plant Recognition Web Application
 Demo: http://140.116.245.86/
-- User: user
+- Username: user
 - Password: 123456
 
 ## Description
