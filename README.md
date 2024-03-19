@@ -3,7 +3,7 @@ Plant Recognition Web Application
 Demo: http://140.116.245.86/
 - Username: user
 - Password: 123456
-  ![image](https://github.com/celine-hsieh/Plant-Identification-Web-App/assets/69034494/0c5a9c42-812d-477b-a540-2ff168115154)
+
 
 
 ## Description
@@ -16,3 +16,5 @@ The core concept revolves around using CNN models for their exceptional ability 
 - **CNN for Image Recognition**: Utilizes a pre-trained CNN model for robust and accurate plant identification.
 - **ChatGPT API**: Enhances user interaction by providing detailed plant information and answering related queries.
 - **Web Technologies**: Built with modern web frameworks for a seamless and responsive user experience.
+
+![image](https://github.com/celine-hsieh/Plant-Identification-Web-App/assets/69034494/0c5a9c42-812d-477b-a540-2ff168115154)
