@@ -10,7 +10,7 @@ Demo: http://140.116.245.86/
 This Plant Recognition Web Application represents a blend of advanced machine learning techniques and user-friendly web technologies. It leverages the power of Convolutional Neural Networks (CNN) to accurately identify plant species from images and integrates with the ChatGPT API to provide an interactive and informative user experience. The application aims to bridge the gap between complex botanical data and everyday users, making plant identification and information accessible to all.
 
 ### Concept
-The core concept revolves around using CNN models for their exceptional ability in image recognition and classification tasks. These models analyze uploaded plant images to identify species, drawing from a comprehensive database of plant characteristics. The integration with ChatGPT API brings in an interactive dimension, allowing users to converse with an AI chatbot for more detailed information about the identified plant, its care, habitat, and other botanical insights.
+The core concept revolves around using MobileNetV2 models for their exceptional ability in image recognition and classification tasks. These models analyze uploaded plant images to identify species, drawing from a comprehensive database of plant characteristics. The integration with ChatGPT API brings in an interactive dimension, allowing users to converse with an AI chatbot for more detailed information about the identified plant, its care, habitat, and other botanical insights.
 
 ### Technologies
 - **MobileNetV2 for Image Recognition**: Utilizes a pre-trained MobileNetV2 model for robust and accurate plant identification.
